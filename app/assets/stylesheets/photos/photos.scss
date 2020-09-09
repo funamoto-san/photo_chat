@@ -1,0 +1,88 @@
+// Place all the styles related to the photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a {
+  text-decoration: none;
+}
+
+.title-contents {
+  height: 80vh;
+  background-image: url("/images/female-koala-and-her-baby-1332217_1920.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.title-text {
+  font-size: 130px;
+  font-weight: bold;
+  color: rgb(31, 26, 26);
+}
+
+.title-text-sub {
+  font-size: 60px;
+  font-weight: bold;
+  margin-left: 0 0 0 auto;
+  position: absolute;
+  top: 80%;
+  color: rgb(253, 253, 253);
+}
+
+.photos-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: rgb(37, 168, 124);
+  font-weight: bold;
+  text-align: center;
+}
+
+.photo-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-lists>.list {
+  width: 37vh;
+  padding: 1w;
+  background-color: white;
+}
+
+.photo-img-content {
+  position: relative;
+}
+
+.photo-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.photo-info {
+  background-color: white;
+  color: black;
+  padding: 1vw;
+}
+
+.photo-name {
+  font-size: 2.5vh;
+  text-align: center;
+}
+
+

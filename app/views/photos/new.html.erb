@@ -1,0 +1,128 @@
+<div class='photos-container'>
+  <header class="photos-header">
+    <%= link_to image_tag('free-resource.jpg', size: '400x50'), "/" %>
+  </header>
+
+  <div class="photos-main">
+    <h2 class="photos-title">画像の情報を入力</h2>
+    <%= form_with model: @photo, local: true do |f| %>
+
+      <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        投稿画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id: "photos-image" %>
+      </div>
+    </div>
+
+    <div class="new-photos">
+      <div class="weight-bold-text">
+        写真のタイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"photos-text", id:"photo-name", placeholder:"タイトル(40文字まで)", maxlength:"40" %>
+
+      <div class="photos-explain">
+        <div class="weight-bold-text">
+          写真のポイント
+          <span class="any">任意</span>
+        </div>
+        <%= f.text_area :explanation, class:"photos-text", id:"photo-info", placeholder:"撮影した時のポイント(任意 1,000文字まで) 気軽に記入してください。例)夕日がきれいで思わずパシャリ!" , rows:"7", maxlength:"1000" %>
+      </div>
+    </div>
+
+    <div class="photos-detail">
+      <div class="weight-bold-text">撮影の詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          カメラ
+          <span class="any">任意</span>
+        </div>
+        <%# <%= f.collection_select(:hoge, hoge, :hoge, :hoge, {}, {class:"select-box", id:"camera"}) %>
+        <div class="weight-bold-text">
+          レンズ
+          <span class="any">任意</span>
+        </div>
+        <%= f.text_area :lens, class:"photos-lens" ,id:"photo-lens", placeholder:"使用したレンズ" %>
+        <div class="weight-bold-text">
+          ISO感度
+          <span class="any">任意</span>
+        </div>
+        <%= f.text_area :iso_speed, class:"iso-speed" ,id:"iso-speed", placeholder:"ISO感度" %>
+        <div class="weight-bold-text">
+          露光時間
+          <span class="any">任意</span>
+        </div>
+        <%= f.text_area :exposure_time, class:"exposure-time" ,id:"exposure-time", placeholder:"露光時間" %>
+        <div class="weight-bold-text">
+          絞り
+          <span class="any">任意</span>
+        </div>
+        <%= f.text_area :aperture, class:"aperture" ,id:"aperture", placeholder:"絞り値" %>
+        <div class="weight-bold-text">
+          焦点距離
+          <span class="any">任意</span>
+        </div>
+        <%= f.text_area :focal, class:"focal" ,id:"focal", placeholder:"焦点距離" %>
+        <div class="weight-bold-text">
+          ホワイトバランス
+          <span class="any">任意</span>
+        </div>
+        <%= f.text_area :white_balance, class:"white-balance" ,id:"white-balance", placeholder:"ホワイトバランス" %>
+        <div class="weight-bold-text">
+          フラッシュ
+          <span class="any">任意</span>
+        </div>
+        <%= f.text_area :flash, class:"flash" ,id:"flash", placeholder:"フラッシュの有無など" %>
+        <div class="weight-bold-text">
+          撮影地
+          <span class="any">任意</span>
+        </div>
+        <%= f.text_area :shooting_place, class:"shooting-place" ,id:"shooting-place", placeholder:"使用した場所" %>
+        <div class="weight-bold-text">
+          撮影日時
+          <span class="any">任意</span>
+        </div>
+        <%# <%= f.text_area :lens, class:"photos-lens" ,id:"photo-lens", placeholder:"使用したレンズ" %>
+      </div>
+    </div>
+
+    <div class="caution">
+      <p class="sentence">
+        <a href="#">禁止されている画像、</a>
+        <a href="#">行為</a>
+        をご確認ください。
+      </p>
+      <p class="sentence">
+        投稿を持ちまして
+        <a href="#">利用規約</a>
+        に同意したことになります。
+      </p>
+    </div>
+
+    <div class="photo-btn-contents">
+      <%= f.submit "投稿する", class:"photo-btn" %>
+      <%= link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+
+    <% end %>
+
+    <footer class="photos-footer">
+      <ul class="menu" >
+        <li><a href="#">プライバシーポリシー</a></li>
+        <li><a href="#">利用規約</a></li>
+      </ul>
+      <%= link_to image_tag('free-resource.jpg', size: '400x50'), "/" %>
+      <p class="inc">
+        ©︎Photo-Chat.Inc.
+      </p>
+    </footer>
+  </div>
+</div>

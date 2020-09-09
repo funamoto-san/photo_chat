@@ -1,0 +1,54 @@
+<%= render "shared/header" %>
+
+<div class='main'>
+  
+  <div class='title-contents'>
+    <h1 class='title-text'>
+      PHOTO CHAT
+    </h1>
+    <p class='title-text-sub'>
+      EASY COME, EASY GO!
+    </p>
+  </div>
+
+  <div class="photos-conrtainer">
+    <h2 class="title">PHOTOS GALLERY</h2>
+    <%= link_to( '新規投稿写真', new_photo_path, {class: "subtitle"}) %>
+    <ul class='photo-lists'>
+      <% if @photos.length > 0 %>
+        <% @photos.each do |photo| %>
+        <li class='list'>
+          <%= link_to photo_path(photo.id) do %>
+            <div class='photo-img-content'>
+              <%= image_tag photo.image, class: "photo-img" %>
+            </div>
+            <div class='photo-info'>
+              <h3 class='photo-name'>
+                <%= photo.name %>
+              </h3>
+            </div>
+          <% end %>
+        </li>
+        <% end %>
+      <% else %>
+        <li class='list'>
+          <%= link_to '#' do %>
+            <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "photo-img" %>
+            <div class='photo-info'>
+              <h3 class='photo-name'>
+                写真を投稿してね!
+              </h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="purchase-btn">
+  <span class="purchase-btn-text">投稿する</span>
+  <%= link_to image_tag("camera.png"), new_photo_path, size: '185x50', class: "purchase-btn-icon" %>
+</div>
+
+<%= render "shared/footer" %>

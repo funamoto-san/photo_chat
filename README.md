@@ -21,6 +21,8 @@ Things you may want to cover:
 
 * Deployment instructions
 
+* ER ( https://app.diagrams.net/?libs=general;uml#G1m6qu1kZoLlG1VcuqHIibtd6STx2TybXs )
+
 * ...
 
 # テーブル設計
@@ -48,12 +50,19 @@ Things you may want to cover:
 
 ## photos テーブル
 
-| Column | Type | Options |
-| ------ | ---- | ------- |
-|        |      |         |
-|        |      |         |
-|        |      |         |
-|        |      |         |
+| Column         | Type   | Options |
+| -------------- | ------ | ------- |
+| name           | string | Options |
+| camera         | string |         |
+| lens           | string |         |
+| iso_speed      | string |         |
+| exposure_time  | string |         |
+| aperture       | string |         |
+| focal          | string |         |
+| white_balance  | string |         |
+| flash          | string |         |
+| shooting_place | string |         |
+| shooting_date  | date   |         |
 
 ### Associations
 
@@ -90,3 +99,8 @@ Things you may want to cover:
 | content | string     | null: false                    |
 | user_id | references | null: false, foreign_key: true |
 | room_id | references | null: false, foreign_key: true |
+
+### Associations
+
+- belongs_to :room
+- belongs_to :user
