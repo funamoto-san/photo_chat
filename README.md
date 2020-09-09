@@ -23,6 +23,12 @@ Things you may want to cover:
 
 * ER ( https://app.diagrams.net/?libs=general;uml#G1m6qu1kZoLlG1VcuqHIibtd6STx2TybXs )
 
+* 実装予定の機能：ユーザー管理機能、画像投稿機能、チャットルーム作成機能、チャットルームにてメッセージの投稿機能
+
+* 画像投稿機能では画像と画像のタイトルは必須だがその他の情報は任意とし、気軽に投稿できるようにしている
+
+* チャットルームにてユーザーがメッセージのやりとりができる
+
 * ...
 
 # テーブル設計
