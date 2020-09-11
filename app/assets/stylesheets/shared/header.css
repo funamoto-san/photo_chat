@@ -17,8 +17,8 @@
 }
 
 .free-resource {
-  width: 10vw;
-  margin-right: 10vw;
+  width: 15vw;
+  margin-right: 5vw;
 }
 
 .search-form {
@@ -32,6 +32,7 @@
   width: 100%;
   height: 5vh;
   padding-left: 10px;
+  border-radius: 10px;
 }
 
 .search-button {
@@ -40,6 +41,8 @@
   cursor: pointer;
   background-color: #3ccace;
   padding: 8px;
+  border-radius: 10px;
+  margin-left: 10px;
 }
 
 .search-icon {
@@ -58,7 +61,6 @@
 .lists-left {
   display: flex;
   min-width: 200px;
-
 }
 
 .category-list {

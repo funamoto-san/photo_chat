@@ -35,16 +35,19 @@ ActiveRecord::Schema.define(version: 2020_09_07_085126) do
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "camera"
-    t.string "lens"
-    t.string "iso_speed"
+    t.string "explanation"
+    t.integer "camera_id", null: false
+    t.integer "lenz_id", null: false
+    t.integer "lenz_type_id", null: false
+    t.integer "iso_speed_id", null: false
     t.string "exposure_time"
     t.string "aperture"
     t.string "focal"
-    t.string "white_balance"
-    t.string "flash"
+    t.integer "white_balance_id", null: false
+    t.string "flash_id", null: false
     t.string "shooting_place"
     t.date "shooting_date"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

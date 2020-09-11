@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
   before_action :move_to_index, except: [:index, :show]
-  # before_action :set_photo, 
+  before_action :set_photo, only: [:show, :edit, :update, :destroy]
   
   def index
     @photos = Photo.all.order("created_at ASC")
@@ -47,10 +47,9 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(
-      :image, :camera, :lens, :iso_speed, 
-      :exposure_time, :aperture, :focal, 
-      :white_balance, :flash, :shooting_place, 
-      :shooting_date).merge(user_id: current_user.id)
+      :image, :name, :camera_id, :lenz_id, :lenz_type_id, :iso_speed_id, 
+      :exposure_time, :aperture, :focal, :white_balance_id, :flash_id, 
+      :shooting_place, :shooting_date).merge(user_id: current_user.id)
   end
 
   def set_photo

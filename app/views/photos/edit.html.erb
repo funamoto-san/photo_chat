@@ -1,16 +1,16 @@
-<div class='photo-container'>
+<div class="photo-container">
 
-  <div class="photos-main">
+  <div class="edit-main">
 
     <div class="photos-header">
-      <%= link_to image_tag('free-resource.jpg', width: '100%', height: '100vh'), "/" %>
+      <%= link_to image_tag('free-resource.jpg' , width: '100%', height: '100vh'), "/" %>
       <h2 class="under">クリックでトップ画面に戻ります</h2>
     </div>
-
+  
     <h2 class="photos-title">画像の情報を入力</h2>
     <%= form_with model: @photo, local: true do |f| %>
 
-      <%= render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -21,7 +21,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id: "photos-image" %>
+        <%= f.file_field :image, id:"photos-image" %>
       </div>
     </div>
 
@@ -30,25 +30,25 @@
         写真のタイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"photos-text", id:"photo-name", placeholder:"タイトル(40文字まで)", maxlength:"40" %>
+      <%= f.text_area :name, class:"photos-text", id:"photo-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
 
       <div class="photos-explain">
         <div class="weight-bold-text">
           写真のポイント
           <span class="any">任意</span>
         </div>
-        <%= f.text_area :explanation, class:"photos-text", id:"photo-info", placeholder:"撮影した時のポイント(任意 1,000文字まで) 気軽に記入してください。例)夕日がきれいで思わずパシャリ!" , rows:"7", maxlength:"1000" %>
+        <%= f.text_area :explanation, class:"photos-text", id:"photo-info", placeholder:"撮影した時のポイント（任意 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
 
     <div class="photos-detail">
-      <div class="photos-title">撮影の詳細</div>
+      <div class="weight-bold-text">商品の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           カメラ
           <span class="any">任意</span>
         </div>
-        <%= f.collection_select(:camera_id, Camera.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <%= f.collection_select(:camera_id, Camera.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           レンズ
           <span class="any">任意</span>
@@ -94,59 +94,42 @@
           <span class="any">任意</span>
         </div>
         <%= f.text_field :shooting_place, class:"field-box" ,id:"shooting-place", placeholder:"撮影した場所" %>
-        <%# <div class="weight-bold-text"> %>
-          <%# 撮影日時 %>
-          <%# <span class="any">任意</span> %>
-        <%# </div> %>
-        <div class="weight-bold-text">
-          撮影日
-          <span class="any">任意</span>
-        </div>
-        <div class='input-birth-wrap'>
-          <%= raw sprintf(
-                      f.date_select(
-                        :shooting_date,
-                        class:'select-birth',
-                        id:"birth-date",
-                        use_month_numbers: true,
-                        prompt:'--',
-                        start_year: 2000,
-                        end_year: (Time.now.year),
-                        date_separator: '%s'),
-                      "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-        </div>
       </div>
     </div>
-
+    
     <div class="caution">
       <p class="sentence">
-        <a href="#">禁止されている画像、</a>
+        <a href="#">禁止されている出品、</a>
         <a href="#">行為</a>
-        をご確認ください。
+        を必ずご確認ください。
       </p>
       <p class="sentence">
-        投稿を持ちまして
+        また、投稿をもちまして
         <a href="#">利用規約</a>
         に同意したことになります。
       </p>
     </div>
 
     <div class="photo-btn-contents">
-      <%= f.submit "投稿する", class:"photo-btn" %>
+      <%= f.submit "変更する" ,class:"photo-btn" %>
       <%= link_to 'もどる', root_path, class:"back-btn" %>
     </div>
-
-    <% end %>
+  
+  <% end %>
 
     <footer class="photos-footer">
-      <ul class="menu" >
+      <ul class="menu">
         <li><a href="#">プライバシーポリシー</a></li>
-        <li><a href="#">利用規約</a></li>
+        <li><a href="#">フリマ利用規約</a></li>
       </ul>
-      <%= link_to image_tag('free-resource.jpg', size: '200x50'), "/" %>
+      <%# <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+      <%= link_to image_tag('free-resource.jpg' , width: '100%', height: '100vh'), "/" %>
       <p class="inc">
         ©︎Photo-Chat,Inc.
       </p>
     </footer>
   </div>
 </div>
+
+<%# cssは商品出品のものを併用しています。
+app/assets/stylesheets/items/new.css %>

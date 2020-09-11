@@ -1,8 +1,10 @@
 /* border-bottom: 1px solid #eee; */
 
 
-.photos-container {
+.photo-container {
   background-color: #f5f5f5;
+  /* background-image: url("/images/flowers-5541118_1920.jpg"); */
+  /* background-size: cover; */
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
   display: flex;
@@ -12,15 +14,30 @@
 }
 
 .photos-header {
-  padding: 5vh 0;
+  margin: 0 0 5vh 0;
   text-align: center;
 }
 
+.photos-header>h2 {
+  margin-top: 2vh;
+}
+
 .photos-main {
-  background-color: #FFF;
-  width: 70vw;
+  background-image: url("/images/flowers-5541118_1920.jpg");
+  background-size: cover;
+  width: 100vw;
   min-width: 450px;
-  padding: 10vh 15vw;
+  max-width: 800px;
+  padding: 5vh 20vw;
+}
+
+.edit-main {
+  background-image: url("/images/cloud-284688_1920.jpg");
+  background-size: cover;
+  width: 100vw;
+  min-width: 450px;
+  max-width: 800px;
+  padding: 5vh 20vw;
 }
 
 .photos-title {
@@ -54,13 +71,6 @@
   font-weight: bold;
   min-width: 170px;
   margin-bottom: 10px;
-}
-
-.select-box {
-  height: 30px;
-  width: 100%;
-  background-color: #f5f5f5;
-  padding-left: 20px;
 }
 
 .question {
@@ -99,9 +109,9 @@
   margin-bottom: 15px;
 }
 
-/* /出品画像 */
+/* /投稿画像 */
 
-/* 商品名と商品説明 */
+/* 画像名と画像説明 */
 .new-photos {
   padding: 2vh 0;
 }
@@ -119,25 +129,40 @@
   margin-top: 2vh;
 }
 
-/* /商品名と商品説明 */
+/* /画像名と画像説明 */
 
-/* 商品の詳細など */
+/* 撮影の詳細など */
 .photos-detail {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   padding: 2vh 0;
 }
 
 .photos-detail>.form {
-  width: 300px;
+  width: 100%;
   padding: 2vh 0;
 }
 
 .select-box {
   margin: 2vh 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  height: 30px;
+  width: 100%;
+  padding-left: 20px;
 }
 
-/* /商品の詳細など */
+.field-box {
+  margin: 2vh 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  height: 30px;
+  width: 100%;
+  padding-left: 20px;
+}
+/* /撮影の詳細など */
 
 /* 注意書き */
 .caution {
@@ -179,11 +204,11 @@
 
 .photos-footer {
   background-color: #f5f5f5;
-  width: 60vw;
-  padding: 3ch 0;
+  padding: 0 0 3ch 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4vh;
 }
 
 
@@ -203,3 +228,35 @@
 .inc {
   font-size: 13px;
 }
+
+.input-birth-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-birth-wrap>select {
+  width: 75px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.input-birth-wrap>p {
+  line-height: 60px;
+  padding: 0 5px;
+}
+
+.under {
+  text-decoration: underline;
+  margin-top: 2px;
+}
+
+/* .free-resources {
+  display: block;
+  width: 100px;
+} */
